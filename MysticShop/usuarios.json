@@ -1,0 +1,26 @@
+[
+  {
+    "username": "Prueba",
+    "password": "$2b$10$ftBhp6o/Ai09rF2nbOdVve7FZJIT9OIbmGfDcN7apGGMXCFHOBqmm"
+  },
+  {
+    "username": "dos",
+    "password": "$2b$10$MzHYkcE8pYVMHn/A/0M6ueQHGGKnIPxTGQwQxVizgtoYq8CuK61hS"
+  },
+  {
+    "username": "Yareli",
+    "password": "$2b$10$hbnbLAX4frQBh6dyGSE0U.21fMCvSpOez6gzhQkJGGBsSr7oZlwGG"
+  },
+  {
+    "username": "tres",
+    "password": "$2b$10$FeeqSNMRbUSDWn4C9wbrwOPbzhhvnUZSq12//rWkbArfrPXUkibHW"
+  },
+  {
+    "username": "gio",
+    "password": "$2b$10$p6emVuM8Tk.BQJLA1nrdBODyavMNzC0zEY4xgYzpb.jAIIQmPOYOC"
+  },
+  {
+    "username": "giogio",
+    "password": "$2b$10$LU52rOJaJ4k1coWZjJ/54OapOkAn70qYRImcLWDFDUCxKJo5voMWi"
+  }
+]

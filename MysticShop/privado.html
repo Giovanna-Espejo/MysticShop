@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystic Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🔮 Mystic Shop</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#consultas">Consultas</a></li>
+        <li><a href="#horoscopo">Horóscopo Diario</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido a Mystic Shop</h1>
+      <p>Conecta con la energía del universo y transforma tu vida</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="productos-section">
+    <h2>✨ Nuestros Productos</h2>
+    <div class="productos-grid">
+      <div class="producto-card">
+        <img src="img/amor.jpg" alt="Productos de Amor" />
+        <h3>Amor</h3>
+        <p>Velas rosas, cuarzos, aceites esenciales para atraer el amor y fortalecer vínculos.</p>
+        <button onclick="mostrarProductos('amor')">Amor</button>
+      </div>
+      <div class="producto-card">
+        <img src="img/proteccion.jpg" alt="Productos de Protección" />
+        <h3>Protección</h3>
+        <p>Amuletos, inciensos y cristales para limpiar energías negativas y proteger tu aura.</p>
+        <button onclick="mostrarProductos('proteccion')">🛡️ Protección</button>
+      </div>
+      <div class="producto-card">
+        <img src="img/salud.jpg" alt="Productos de Salud" />
+        <h3>Salud</h3>
+        <p>Hierbas, velas verdes y baños energéticos para la sanación física y espiritual.</p>
+        <button onclick="mostrarProductos('salud')">🌿 Salud</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTAS -->
+  <section id="consultas" class="consultas-section">
+    <h2>🔮 Consultas Esotéricas</h2>
+    <p>Reserva una lectura de tarot o recibe un consejo espiritual personalizado.</p>
+    <form class="form-consulta">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo de consulta:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="tarot">Lectura de Tarot</option>
+          <option value="consejo">Consejo Espiritual</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tu situación..."></textarea>
+      </div>
+      <button type="submit">Enviar Consulta</button>
+    </form>
+  </section>
+
+  <!-- HORÓSCOPO DIARIO -->
+  <section id="horoscopo" class="horoscopo-section">
+    <h2>🌟 Horóscopo Diario</h2>
+    <p>Selecciona tu signo zodiacal para ver tu horóscopo de hoy.</p>
+    <select id="signo-select">
+      <option value="">Selecciona tu signo</option>
+      <option value="aries">Aries</option>
+      <option value="taurus">Tauro</option>
+      <option value="gemini">Géminis</option>
+      <option value="cancer">Cáncer</option>
+      <option value="leo">Leo</option>
+      <option value="virgo">Virgo</option>
+      <option value="libra">Libra</option>
+      <option value="scorpio">Escorpio</option>
+      <option value="sagittarius">Sagitario</option>
+      <option value="capricorn">Capricornio</option>
+      <option value="aquarius">Acuario</option>
+      <option value="pisces">Piscis</option>
+    </select>
+    <div id="resultado-horoscopo" class="horoscopo-resultado"></div>
+  </section>
+
+  <!-- Modal de productos -->
+  <div id="modal-productos" class="modal hidden">
+    <div class="modal-contenido">
+      <h3 id="titulo-modal"></h3>
+      <div id="productos-lista" class="productos-detalle"></div>
+      <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal de detalle -->
+  <div id="modal-detalle" class="modal hidden">
+    <div class="modal-contenido">
+      <img id="detalle-img" src="" alt="" />
+      <h3 id="detalle-nombre"></h3>
+      <p id="detalle-desc"></p>
+      <p id="detalle-precio"></p>
+      <button onclick="comprarProducto()">Comprar</button>
+      <button onclick="cerrarDetalle()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Sección detallada de productos de Amor -->
+  <section id="amor" class="categoria-productos" style="display:none;">
+    <h2>💖 Productos de Amor</h2>
+    <div class="productos-detalle">
+      <div class="producto-item">
+        <img src="img/amor1.jpg" alt="Vela rosa" />
+        <h3>Vela Rosa</h3>
+        <p>Ideal para atraer el amor y fortalecer relaciones sentimentales.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/amor2.jpg" alt="Cuarzo rosa" />
+        <h3>Cuarzo Rosa</h3>
+        <p>Piedra del amor incondicional, armoniza las emociones y atrae buenas vibras.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/amor3.jpg" alt="Aceite esencial" />
+        <h3>Aceite Esencial Amor</h3>
+        <p>Usado en rituales o baños energéticos para abrir el corazón al amor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección detallada de productos de Protección -->
+  <section id="proteccion" class="categoria-productos" style="display:none;">
+    <h2>🛡️ Productos de Protección</h2>
+    <div class="productos-detalle">
+      <div class="producto-item">
+        <img src="img/proteccion1.jpg" alt="Amuleto de protección" />
+        <h3>Amuleto Energético</h3>
+        <p>Protege contra energías negativas, ideal para llevar contigo.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/proteccion2.jpg" alt="Incienso de protección" />
+        <h3>Incienso de Ruda</h3>
+        <p>Limpieza energética para ambientes cargados o antes de rituales.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/proteccion3.jpg" alt="Cuarzo negro" />
+        <h3>Cuarzo Obsidiana</h3>
+        <p>Absorbe y transforma la energía negativa en positiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección detallada de productos de Salud -->
+  <section id="salud" class="categoria-productos" style="display:none;">
+    <h2>🌿 Productos de Salud</h2>
+    <div class="productos-detalle">
+      <div class="producto-item">
+        <img src="img/salud1.jpg" alt="Velas verdes" />
+        <h3>Velas Verdes</h3>
+        <p>Rituales de sanación física, emocional y energética.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/salud1.jpg" alt="Hierbas medicinales" />
+        <h3>Hierbas Medicinales</h3>
+        <p>Mezclas de plantas naturales para infusiones y baños purificantes.</p>
+      </div>
+      <div class="producto-item">
+        <img src="img/salud2.jpg" alt="Baño energético" />
+        <h3>Baño Energético</h3>
+        <p>Ritual de limpieza y restauración energética para cuerpo y alma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón de cerrar sesión -->
+  <button id="logoutBtn" style="
+    background-color: #8e44ad;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  ">Cerrar sesión</button>
+
+  <script>
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('mouseover', () => logoutBtn.style.backgroundColor = '#732d91');
+    logoutBtn.addEventListener('mouseout',  () => logoutBtn.style.backgroundColor = '#8e44ad');
+    logoutBtn.addEventListener('click', async () => {
+      const res = await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+      if (res.ok) location.href = 'login.html';
+      else alert('Error al cerrar sesión');
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
